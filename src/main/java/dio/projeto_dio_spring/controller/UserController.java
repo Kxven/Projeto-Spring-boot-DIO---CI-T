@@ -25,8 +25,12 @@ public class UserController{
         repository.remove(id);
     }
 
-    @PostMapping("users")
+    @PostMapping
     public void postUser(@RequestBody User user){
         repository.save(user);
+    }
+    @PutMapping
+    public void putUser(@RequestBody User user){
+        repository.update(user);
     }
 }
